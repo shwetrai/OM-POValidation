@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:VariableSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore" language="ARL">
+  <name>Data</name>
+  <uuid>1674a762-c4d1-45a2-b4a7-ca78ce1b3885</uuid>
+  <variables name="Item" type="ompoiv.item.Item" initialValue="" verbalization="the item" jsonName=""/>
+  <variables name="PO" type="ompoiv.item.PurchaseOrder" initialValue="" verbalization="the PO" jsonName=""/>
+  <variables name="counter" type="long" initialValue="" verbalization="the counter" jsonName=""/>
+</ilog.rules.studio.model.base:VariableSet>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.ruleflow:RuleFlow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.ruleflow="http://ilog.rules.studio/model/ruleflow.ecore">
+  <name>DCSRDecisionRuleFlow</name>
+  <uuid>6d84b489-2bfc-4129-9b27-360a9e7cccdf</uuid>
+  <locale>en_US</locale>
+  <rfModel><Ruleflow xmlns="http://schemas.ilog.com/Rules/7.0/Ruleflow">
+    <Body>
+        <TaskList>
+            <StartTask Identifier="task_0"/>
+            <StopTask Identifier="task_2"/>
+            <ActionTask Identifier="task_3">
+                <Actions Language="bal"><![CDATA[set 'the counter' to 1 ;]]></Actions>
+            </ActionTask>
+            <ActionTask Identifier="task_4">
+                <Actions Language="bal"><![CDATA[set 'the item' to the element at the position corresponding to 'the counter' in the poItems of 'the PO';]]></Actions>
+            </ActionTask>
+            <RuleTask ExecutionMode="Fastpath" ExitCriteria="None" Identifier="task_5" Ordering="Default">
+                <RuleList>
+                    <Rule Uuid="97382f8a-e418-40fc-afed-6136de32b91d"/>
+                </RuleList>
+            </RuleTask>
+            <RuleTask ExecutionMode="Fastpath" ExitCriteria="None" Identifier="task_6" Ordering="Default">
+                <RuleList>
+                    <Rule Uuid="38e9f66b-ef86-4e08-82a9-d297a0ac9a63"/>
+                </RuleList>
+            </RuleTask>
+            <ActionTask Identifier="task_7">
+                <Actions Language="bal"><![CDATA[set 'the counter' to 'the counter'+1; ]]></Actions>
+            </ActionTask>
+        </TaskList>
+        <NodeList>
+            <TaskNode Identifier="node_0" Task="task_0"/>
+            <TaskNode Identifier="node_2" Task="task_2"/>
+            <TaskNode Identifier="node_3" Task="task_3"/>
+            <TaskNode Identifier="node_4" Task="task_4"/>
+            <TaskNode Identifier="node_5" Task="task_5"/>
+            <TaskNode Identifier="node_6" Task="task_6"/>
+            <TaskNode Identifier="node_7" Task="task_7"/>
+            <BranchNode Identifier="node_8"/>
+        </NodeList>
+        <TransitionList>
+            <Transition Identifier="transition_3" Source="node_0" Target="node_3"/>
+            <Transition Identifier="transition_4" Source="node_3" Target="node_4"/>
+            <Transition Identifier="transition_5" Source="node_4" Target="node_5"/>
+            <Transition Identifier="transition_6" Source="node_5" Target="node_6"/>
+            <Transition Identifier="transition_7" Source="node_6" Target="node_7"/>
+            <Transition Identifier="transition_8" Source="node_7" Target="node_8"/>
+            <Transition Identifier="transition_9" Source="node_8" Target="node_2"/>
+            <Transition Identifier="transition_10" Source="node_8" Target="node_4">
+                <Conditions Language="bal"><![CDATA['the counter' ≤ the number of elements in the poItems of 'the PO' ]]></Conditions>
+            </Transition>
+        </TransitionList>
+    </Body>
+    <Resources>
+        <ResourceSet Locale="en_US">
+            <Data Name="node_7#label"><![CDATA[Increase counter]]></Data>
+            <Data Name="node_5#name"><![CDATA[SKU Check]]></Data>
+            <Data Name="node_2#name"><![CDATA[End node]]></Data>
+            <Data Name="node_5#label"><![CDATA[SKU Check]]></Data>
+            <Data Name="node_4#name"><![CDATA[Set the Item]]></Data>
+            <Data Name="node_6#label"><![CDATA[QuantityCheck]]></Data>
+            <Data Name="node_7#name"><![CDATA[Increase counter]]></Data>
+            <Data Name="node_6#name"><![CDATA[QuantityCheck]]></Data>
+            <Data Name="node_3#label"><![CDATA[Initialise the counter]]></Data>
+            <Data Name="node_0#name"><![CDATA[Start node]]></Data>
+            <Data Name="node_4#label"><![CDATA[Set the Item]]></Data>
+            <Data Name="node_8#label"><![CDATA[Branch node 1]]></Data>
+            <Data Name="node_8#name"><![CDATA[Branch node 1]]></Data>
+            <Data Name="node_3#name"><![CDATA[Initialise the counter]]></Data>
+        </ResourceSet>
+    </Resources>
+</Ruleflow>
+</rfModel>
+</ilog.rules.studio.model.ruleflow:RuleFlow>

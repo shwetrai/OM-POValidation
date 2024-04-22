@@ -1,0 +1,125 @@
+
+package ompoiv.item;
+
+
+class Item
+        property ads.typeId "1"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Item"
+        #de.generated
+{
+    string comment
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "comment"
+                #update;
+    boolean isValid
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "isValid"
+                #update;
+    string itemDescription
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "itemDescription"
+                #update;
+    string itemNo
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "itemNo"
+                #update;
+    double itemPrice
+                property ads.attributeId "5"
+                property com.fasterxml.jackson.annotation.JsonProperty "itemPrice"
+                #update;
+    double quantity
+                property ads.attributeId "6"
+                property com.fasterxml.jackson.annotation.JsonProperty "quantity"
+                #update;
+    string skuStatus
+                property ads.attributeId "7"
+                property com.fasterxml.jackson.annotation.JsonProperty "skuStatus"
+                #update;
+    double unitPrice
+                property ads.attributeId "8"
+                property com.fasterxml.jackson.annotation.JsonProperty "unitPrice"
+                #update;
+    Item(string comment, boolean isValid, string itemDescription, string itemNo, double itemPrice, double quantity, string skuStatus, double unitPrice)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    Item()
+                #dataio.default;
+}
+
+class PurchaseOrder
+        property ads.typeId "2"
+        property com.fasterxml.jackson.annotation.JsonTypeName "PurchaseOrder"
+        #de.generated
+{
+    string customerName
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "customerName"
+                #update;
+    java.time.LocalDate edDate
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "edDate"
+                #update;
+    java.time.LocalDate grDate
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "grDate"
+                #update;
+    string invoiceNumber
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "invoiceNumber"
+                #update;
+    java.time.LocalDate poDate
+                property ads.attributeId "5"
+                property com.fasterxml.jackson.annotation.JsonProperty "poDate"
+                #update;
+    java.util.List poItems domain 0,* class ompoiv.item.Item
+                property ads.attributeId "6"
+                property com.fasterxml.jackson.annotation.JsonProperty "poItems"
+                #update;
+    string poNumber
+                property ads.attributeId "7"
+                property com.fasterxml.jackson.annotation.JsonProperty "poNumber"
+                #update;
+    string purchaseOrderID
+                property ads.attributeId "8"
+                property com.fasterxml.jackson.annotation.JsonProperty "purchaseOrderID"
+                #update;
+    string shippedToLocation
+                property ads.attributeId "9"
+                property com.fasterxml.jackson.annotation.JsonProperty "shippedToLocation"
+                #update;
+    string supplier
+                property ads.attributeId "10"
+                property com.fasterxml.jackson.annotation.JsonProperty "supplier"
+                #update;
+    PurchaseOrder(string customerName, 
+        java.time.LocalDate edDate, 
+        java.time.LocalDate grDate, 
+        string invoiceNumber, 
+        java.time.LocalDate poDate, 
+        java.util.List poItems domain 0,* class ompoiv.item.Item, 
+        string poNumber, 
+        string purchaseOrderID, 
+        string shippedToLocation, 
+        string supplier)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    PurchaseOrder()
+                #dataio.default;
+    void addTo_poItems(ompoiv.item.Item poItems)
+                property collectionAttribute "poItems"
+                #update;
+    void clear_poItems()
+                property collectionAttribute "poItems"
+                #update;
+    void removeFrom_poItems(ompoiv.item.Item poItems)
+                property collectionAttribute "poItems"
+                #update;
+    void set_poItems(java.util.Collection poItems domain 0,* class ompoiv.item.Item)
+                property collectionAttribute "poItems"
+                #update;
+}
+

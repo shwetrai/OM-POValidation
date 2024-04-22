@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="DCS-POValidation" usingRuleflow="true" ruleflowName="DCSRDecisionRuleFlow" targetRuleProjectName="DCS-POValidation">
+  <name>DCS-POValidation</name>
+  <uuid>6a4d09d1-0710-4f39-884e-6372a8084f4f</uuid>
+  <referencedVariables variableName="PO" variableSetName="Data" direction="IN_OUT">
+    <variableSet href="../rules/Data.var#1674a762-c4d1-45a2-b4a7-ca78ce1b3885"/>
+  </referencedVariables>
+  <ruleflow href="../rules/DCSRDecisionRuleFlow.rfl#6d84b489-2bfc-4129-9b27-360a9e7cccdf"/>
+  <targetRuleProject href="../../DCS-POValidation#75bcaa4b-1c76-41cb-8862-4c886b622add"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>QuantityValidation</name>
+  <uuid>38e9f66b-ef86-4e08-82a9-d297a0ac9a63</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if all of the following conditions are true :  
+  
+	- the quantity of 'the item' = round ( the quantity of 'the item' , 0 )  
+    - the skuStatus of 'the item' is "Active" 
+
+then
+	'the item' gets isValid ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>
