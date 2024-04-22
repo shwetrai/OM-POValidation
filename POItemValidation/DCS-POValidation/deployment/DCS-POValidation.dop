@@ -7,4 +7,13 @@
   </referencedVariables>
   <ruleflow href="../rules/DCSRDecisionRuleFlow.rfl#6d84b489-2bfc-4129-9b27-360a9e7cccdf"/>
   <targetRuleProject href="../../DCS-POValidation#75bcaa4b-1c76-41cb-8862-4c886b622add"/>
+  <tags key="operationDescription">
+    <value><![CDATA[""]]></value>
+  </tags>
+  <tags key="operationName">
+    <value><![CDATA["DCS-POValidation-DCS-POValidation"]]></value>
+  </tags>
+  <tags key="exposedAtRuntime">
+    <value><![CDATA[true]]></value>
+  </tags>
 </com.ibm.rules.studio.model.decisionservice:Operation>
